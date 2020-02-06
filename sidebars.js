@@ -7,14 +7,14 @@
 
 module.exports = {
   docs: [
-    //{
-      //type: 'doc',
-      //id: 'inicio',
-    //},
+    {
+      type: 'doc',
+      id: 'inicio',
+    },
     //{
       //type: 'category',
       //label: 'Servidor',
-      //items: ['servidor', 'instalacionS'],
+      //items: ['servidor'],
     //},
     //{
       //type: 'category',
@@ -24,7 +24,7 @@ module.exports = {
     {
       type: 'category',
       label: 'SNMP',
-      items: ['doc1', 'doc2', 'doc3'],
+      items: ['doc1', 'doc2', 'doc3', 'mdx'],
     },
     //{
       //type: 'category',
