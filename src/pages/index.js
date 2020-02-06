@@ -8,32 +8,40 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Monitoreo de redes en tiempo real</>,
+    imageUrl: 'img/metric_collection.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Con más de 2000 monitores de rendimiento de red
+        integrados, monitorea métricas de estado y críticas
+        tales como pérdida de paquetes, latencia, velocidad,
+        errores y descartes, y analiza cuellos de botella en
+        el rendimiento.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Monitoreo de servidores</>,
+    imageUrl: 'img/problem_detection.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Monitoree la utilización de CPU, memoria y disco
+        de servidores Windows y Linux. También monitoree
+        el rendimiento del host y las máquinas virtuales
+        de las plataformas de virtualización VMware,
+        Hyper-V y Xen.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Dashboards personalizables</>,
+    imageUrl: 'img/notification.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Evalúe los dashboards predeterminados o cree los
+        suyos propios haciendo uso de más de 200 widgets
+        de rendimiento disponibles y coonozca el rendimiento
+        de su red de un vistazo.
       </>
     ),
   },
@@ -59,8 +67,8 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} | NMS`}
+      description="Sistema de Monitoreo de Red UFPS">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -68,11 +76,11 @@ function Home() {
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                'button button--outline button--secondary button--lg',
+                'button button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/doc1')}>
-              Get Started
+              href={'https://github.com/LizethRE2/MonitoreoDocs'}>
+              Empezar
             </Link>
           </div>
         </div>
