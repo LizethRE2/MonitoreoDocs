@@ -11,11 +11,11 @@ module.exports = {
       type: 'doc',
       id: 'inicio',
     },
-    //{
-      //type: 'category',
-      //label: 'Servidor',
-      //items: ['servidor'],
-    //},
+    {
+      type: 'category',
+      label: 'Servidor',
+      items: ['servidor', 'instalacionS', 'configuracionS'],
+    },
     //{
       //type: 'category',
       //label: 'Herramienta',
