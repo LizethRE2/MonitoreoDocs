@@ -24,13 +24,13 @@ module.exports = {
     {
       type: 'category',
       label: 'SNMP',
-      items: ['doc1', 'doc2', 'doc3', 'mdx'],
+      items: ['snmp', 'activacionSNMP'],
     },
-    //{
-      //type: 'category',
-      //label: 'Backup',
-      //items: ['backup', 'mdx', 'respaldo'],
-    //},
+    {
+      type: 'category',
+      label: 'Copia de Seguridad',
+      items: ['copia', 'instalacionTFTP', 'respaldo'],
+    },
   ],
   //someSidebar: {
     //NM: ['introduccion'],
