@@ -29,7 +29,13 @@ module.exports = {
     {
       type: 'category',
       label: 'Copia de Seguridad',
-      items: ['copia', 'instalacionTFTP', 'respaldo'],
+      items: ['copia',
+      {
+        type: 'category',
+        label: 'TFTP',
+        items: ['instalacionTFTP', 'configuracionTFTP'],
+        },
+        'respaldo'],
     },
   ],
   //someSidebar: {
