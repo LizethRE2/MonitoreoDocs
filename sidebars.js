@@ -16,11 +16,22 @@ module.exports = {
       label: 'Servidor',
       items: ['servidor', 'instalacionS', 'configuracionS'],
     },
-    //{
-      //type: 'category',
-      //label: 'Herramienta',
-      //items: ['acerca', 'doc2'],
-    //},
+    {
+      type: 'category',
+      label: 'Sistema de Monitoreo',
+      items: [
+        {
+          type: 'category',
+          label: 'Cacti',
+          items: ['cacti', 'instalacionC', 'configuracionC', 'administracionC'],
+          },
+          {
+            type: 'category',
+            label: 'Zabbix',
+            items: ['zabbix', 'instalacionH', 'configuracionH', 'administracionH'],
+            },
+          ],
+    },
     {
       type: 'category',
       label: 'SNMP',

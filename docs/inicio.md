@@ -13,8 +13,8 @@ keywords:
   - CSI
 image: https://i.imgur.com/mErPwqL.png
 ---
-<center><img src="../img/NMS.ico" width="200"/></center>
+<center><img src="../img/NMS.ico" width="30%"/></center>
 
-<div class="text-justify"><p> Estas páginas contienen la documentación del Sistema de Monitoreo de Red (NMS). Esta documentación está destinada a ser utilizada por el Centro de Servicios de Información (CSI) de la Universidad Francisco de Paula Santander (UFPS).</p></div>
+<div class="text-justify"><p> Estas páginas contienen la documentación del Sistema de Monitoreo de Red (Network Monitoring System | NMS). Esta documentación está destinada a ser utilizada por el Centro de Servicios de Información (CSI) de la Universidad Francisco de Paula Santander (UFPS).</p></div>
 
 Use la barra lateral para navegar por el contenido de la documentación.

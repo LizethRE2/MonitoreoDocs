@@ -7,7 +7,7 @@ module.exports = {
   baseUrl: '/', // Base URL for your project */
   //baseUrl: '/documentacion/',
   organizationName: 'LizethRE2', // Usually your GitHub org/user name.
-  projectName: 'MonitoreoDoc', // Usually your repo name.
+  projectName: 'MonitoreoDocs', // Usually your repo name.
   themeConfig: {
     disableDarkMode: true, //Switch de modo Black
     sidebarCollapsible: true, //Desplegable navegación
@@ -40,7 +40,7 @@ module.exports = {
             {
               html: `
               <div style="text-align: center;">
-                <a href="http://localhost:3000/documentacion" rel="noreferrer noopener" aria-label="CSI-UFPS">
+                <a href="" rel="noreferrer noopener" aria-label="CSI-UFPS">
                   <img class="img-responsive" src="/img/ImgFooter.ico" alt="CSI - UFPS" style="width: 140px;"/>
                   </a>
               </div>
@@ -53,15 +53,15 @@ module.exports = {
           items: [
             {
               label: 'Instalación',
-              to: 'docs/introduccion',
+              to: 'docs/instalacionH',
             },
             {
               label: 'Configuración',
-              to: 'docs/doc2',
+              to: 'docs/configuracionH',
             },
             {
               label: 'Administración',
-              to: 'docs/doc3',
+              to: 'docs/administracionH',
             },
           ],
         },
