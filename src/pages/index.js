@@ -8,40 +8,32 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Monitoreo de redes en tiempo real</>,
-    imageUrl: 'img/metric_collection.svg',
+    title: <>Monitoreo con Zabbix</>,
+    imageUrl: 'img/templates.svg',
     description: (
       <>
-        Con más de 2000 monitores de rendimiento de red
-        integrados, monitorea métricas de estado y críticas
-        tales como pérdida de paquetes, latencia, velocidad,
-        errores y descartes, y analiza cuellos de botella en
-        el rendimiento.
+        En la red de datos de la Universidad Francisco de
+        Paula Santander sede Cúcuta y Campos Elíseos se
+        implanto Zabbix, una herramienta de código abierto
+        que permite monitorear y registrar en tiempo real la
+        disponibilidad, el uso de recursos, los parámetros
+        de red y el estado de los dispositivos, servidores,
+        aplicaciones y base de datos.
       </>
     ),
   },
   {
-    title: <>Monitoreo de servidores</>,
-    imageUrl: 'img/problem_detection.svg',
+    title: <>¿Por qué Zabbix?</>,
+    imageUrl: 'img/visualization.svg',
     description: (
       <>
-        Monitoree la utilización de CPU, memoria y disco
-        de servidores Windows y Linux. También monitoree
-        el rendimiento del host y las máquinas virtuales
-        de las plataformas de virtualización VMware,
-        Hyper-V y Xen.
-      </>
-    ),
-  },
-  {
-    title: <>Dashboards personalizables</>,
-    imageUrl: 'img/notification.svg',
-    description: (
-      <>
-        Evalúe los dashboards predeterminados o cree los
-        suyos propios haciendo uso de más de 200 widgets
-        de rendimiento disponibles y coonozca el rendimiento
-        de su red de un vistazo.
+        Zabbix es uno de los sistema de monitoreo open source más
+        completos del mercado, cuenta con una interfaz web fácil e
+        intuitiva que permite visualizar todos los componentes
+        monitoreados ​​en diversas formas (gráficos, tablas, mapas,
+        pantallas, etc). Utiliza un mecanismo de notificación
+        flexible que permite configurar medios de envio como correo
+        electrónico, SMS, Jabber.
       </>
     ),
   },
@@ -50,13 +42,13 @@ const features = [
 function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4', styles.feature)}>
+    <div className={classnames('col col--6', styles.feature)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
+      <h3 className="text--center">{title}</h3>
       <p>{description}</p>
     </div>
   );
@@ -79,7 +71,7 @@ function Home() {
                 'button button--secondary button--lg',
                 styles.getStarted,
               )}
-              href={'https://github.com/LizethRE2/MonitoreoDocs'}>
+              to={'zabbix'}>
               Empezar
             </Link>
           </div>

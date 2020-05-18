@@ -1,6 +1,6 @@
 ---
 id: instalacionS
-title: Instalación del Servidor
+title: Instalación de CentOS 7
 sidebar_label: Instalación
 hide_title: false
 hide_table_of_contents: false
@@ -14,127 +14,85 @@ keywords:
   - Servidor
   - CentOS 7
 ---
-## Descarga de Imagen ISO
-Antes de comenzar la instalación debe ir a la [ página oficial](https://www.centos.org/download/ "Download CentOS") y descargar la versión de preferencia, para este caso es **CentOS 7**.
+Inicie el sistema. Seleccione **Install CentOS 7** y presione la tecla **Enter** para continuar.
+![alt text](../img/centos1.png)
 
-![alt text](../img/centos1.png 'Página oficial de Ubuntu')
-
-Se tienen 3 opciones de descarga:
-- DVD ISO
-- Everything ISO
-- Minimal ISO
-
-En este caso se elige DVD ISO. Al hacer clic en el botón **_DVD ISO_** se descarga un archivo _CentOS-7-x86_64-DVD-1804.iso (4,5 Gb aprox.)_. Una vez descargado el archivo, se puede quemar en un DVD :dvd:, bootear un Pendrive :pager: o montar en una Máquina Virtual :computer:.
-
-## Primeros Pasos
-Se tienen dos opciones para instalar CentOS:
-- Install CentOS 7
-- Test this media & install CentOS 7
-
-> La segunda opción permite verificar la ISO, al comprobar que esta es válida, continua cargando el boot de arranque.
-
-En este caso se elige **_Install CentOS 7_**. Presione la tecla **_Enter_** para continuar.
-![alt text](../img/centos2.png 'Selección del tipo de instalación')
-
-Si el arranque de la ISO es correcto, se muestra el boot de arranque.
-![alt text](../img/centos3.png 'Arranque de instalación')
-
-Poco después se inicia el asistente de instalación, la primera pantalla permite elegir el idioma de preferencia.
-
-> Para seleccionar los valores se puede utilizar el Mouse o las teclas (flechas de arriba y abajo, Tab, barra espaciadora o Enter).
-
-Elija el idioma de preferencia y haga clic en el botón **_continuar_**.
-![alt text](../img/centos4.png 'Selección de idioma')
+Si el arranque es correcto, se inicia el asistente de instalación.
+Seleccione el idioma que se desea utilizar durante la instalación y haga clic en el botón **[Continuar]**.
+![alt text](../img/centos2.png)
 
 ## Resumen de Instalación
-En la siguiente pantalla se muestra un grupo de categorías a configurar antes de instalar CentOS.
+La siguiente pantalla muestra un grupo de categorías a configurar antes de empezar la instalación.
 - Regionalización (fecha & hora, teclado y soporte de idioma)
 - Software (origen de instalación y selección de software)
 - Sistema (destino de la instalación, KDUMP, red & nombre de equipo y security polity)
 
-![alt text](../img/centos5.png 'Resumen de instalación')
-
-> Los elementos que tienen un triángulo naranja y una leyenda en rojo requieren de alguna configuración.
-
-Para configurar un elemento se debe hacer clic en el elemento y el asistente de instalación abre la ventana correspondiente.
+![alt text](../img/centos3.png)
 
 ### Regionalización
-Si se cuenta con conexión a Internet, el asistente configura automáticamente la fecha y hora. La configuración del teclado y soporte de idioma se hizo en el paso anterior.
-
 #### Fecha y Hora
-Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.1.png 'Regionalización')
+Seleccione la región y ciudad que desea establecer como zona horaria y haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.1.png)
 
 #### Teclado
-Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.2.png 'Regionalización')
+Haga clic en el botón **[+]** para agregar otro tipo de teclado.
+![alt text](../img/centos3.3.png)
+
+Seleccione el tipo de teclado y haga clic en el botón **[Agregar]**.
+![alt text](../img/centos3.2.png)
+
+Después de agregar la distribución del teclado, haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.3.png)
 
 #### Soporte de Idioma
-Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.3.png 'Regionalización')
+Seleccione el soporte de idioma y haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.4.png)
 
 ### Software
 #### Origen de Instalación
-Por defecto, el origen de la instalación es el medio de arranque, en este caso es una ISO. Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.4.png 'Software')
+Por defecto, el origen de instalación es el medio de arranque. Seleccione la fuente de instalación y haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.5.png)
 
 #### Selección de Software
-Esta es una de las pantallas más importantes, ya que es donde se puede seleccionar el tipo de servidor y los paquetes o aplicaciones que se desean instalar.
-
-En este caso se selecciona **_Servidor de infraestructura_** y **_administración remota para linux_**, lo que permite administrar el servidor de forma remota por medio de SSH. Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.5.png 'Software')
+La siguiente pantalla es muy importantes, ya que es donde se puede seleccionar el tipo de servidor y los paquetes que se desean instalar. Seleccione **Servidor de infraestructura** y el paquete **administración remota para linux**, el cual permitirá acceder remotamente al servidor. Después, haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.6.png)
 
 ### Sistema
 #### Destino de la Instalación
-El destino de la instalación es donde se indica el disco o unidad en la que se va a instalar CentOS y el tipo de particionado.
-
-En este caso se elige el disco de preferencia y el tipo de particionado automático. Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.6.png 'Sistema')
+Seleccione el disco de instalación y haga clic en el botón **[Listo]**. Si desea personalizar los diseños de partición, marque la casilla **Voy a configurar las particiones** y continúe.
+![alt text](../img/centos3.7.png)
 
 #### KDUMP
-> **Kdump** es un mecanismo de volcado de memoria de daños de kernel. Si se presenta un fallo en el sistema, Kdump captura la información.
+> :pushpin: **Kdump** es un mecanismo de volcado de memoria de daños de kernel. Si se presenta un fallo en el sistema, Kdump captura la información.
 
-Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.7.png 'Sistema')
+Marque la casilla y haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.8.png)
 
-#### Red y Nombre de equipo
-El asistente detecta y configura los adaptadores de red que están disponibles. Haga clic en el botón **_Listo_** para continuar.
+#### Red
+El asistente detecta y configura las interfaces de red que están disponibles. Haga clic en el botón switch **[On]** y después, haga clic en el botón **[Listo]**.
 
-> El adaptador de red se puede modificar mas adelante.
+![alt text](../img/centos3.9.png)
 
-![alt text](../img/centos5.8.png 'Sistema')
+#### Security Polity
+> :pushpin: La aplicación de una política de seguridad no es necesaria en todos los sistemas. Esta pantalla sólo debe ser usada cuando se debe configurar una política específica.
 
-#### Security polity
-> La aplicación de una política de seguridad no es necesaria en todos los sistemas. Esta pantalla sólo debe ser usada cuando se debe configurar una política específica.
+Haga clic en el botón switch **[On]** y después, haga clic en el botón **[Listo]**.
+![alt text](../img/centos3.10.png)
 
-Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos5.9.png 'Sistema')
-
-Cuando se finalice la configuración de cada elemento haga clic en el botón **_Empezar instalación_**.
-![alt text](../img/centos6.png 'Finalizar instalación')
+Una vez finalice la configuración de cada elemento, haga clic en el botón **[Empezar instalación]** para continuar.
+![alt text](../img/centos3.11.png)
 
 ## Configuración de Perfil
-Mientras se instala CentOS, en paralelo se debe configurar la contraseña y el usuario, hacer clic en el elemento a configurar.
-![alt text](../img/centos7.png 'Configuración de perfil')
+Configure la contraseña del usuario root y si lo desea, cree un usuario.
+![alt text](../img/centos4.png)
 
 ### Contraseña de Root
-Ingrese la contraseña para el SuperUsuario (root). Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos8.png 'Configuración de perfil')
-
-### Crear Usuario
-Ingrese la información sobre el perfil como: nombre del usuario, usuario y contraseña. Haga clic en el botón **_Listo_** para continuar.
-![alt text](../img/centos9.png 'Configuración de perfil')
+Ingrese la contraseña para el usuario root y haga clic en el botón **[Listo]**.
+![alt text](../img/centos4.1.png)
 
 ## Pasos Finales
-Cuando se finalice la configuración de perfil haga clic en el botón **_Finalizar configuración_**.
-![alt text](../img/centos10.png 'Finalizar configuración')
+Una vez finalice la configuración e instalación de paquetes, haga clic en el botón **[Reiniciar]** para completar la instalación.
+![alt text](../img/centos4.2.png)
 
-![alt text](../img/centos11.png 'Reinicio')
-
-Cuando se termine la instalación de paquetes se puede reiniciar el servidor para terminar la instalación. Haga clic en el botón **_Reiniciar_** para continuar.
-![alt text](../img/centos12.png 'Reinicio')
-
-Poco después se completa el reinicio y el servidor estará listo para utilizarse.
-![alt text](../img/centos13.png 'Reinicio')
-
-![alt text](../img/centos14.png 'Inicio de Sesión')
+Después del reinicio, se muestra la pantalla de inicio de sesión. Inicie sesión con el usuario root y la contraseña que configuró durante la instalación. La instalación de CentOS se completa si puede iniciar sesión normalmente.
+![alt text](../img/centos5.png)

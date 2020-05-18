@@ -15,12 +15,12 @@ keywords:
   - Backup
   - Respaldo
 ---
-Esta sección cubre la realizar de copias de seguridad de **_Switch_** marca Cisco, mediante la interfaz de línea de comandos (CLI). Estas páginas se diseñaron para ayudar al administrador de red a implantar el Sistema de Monitoreo.
+Esta sección cubre la realización de copias de seguridad en **_Switch_** marca Cisco por medio de la interfaz de línea de comandos o CLI(Command Line Interface). La información incluye instrucciones e imágenes paso a paso.
 
-## Requisitos Previos
+## Requisitos
 - Servidor TFTP (Trivial File Transfer Protocol) o FTP (File Transfer Protocol)
 - Conexión remota del Switch
 
-> Este documento no está restringido a versiones específicas de Software y Hardware.
+> :pushpin: Este documento no está restringido a versiones específicas de Software y Hardware.
 
 Use la barra lateral para navegar por el contenido de la sección de Copia de Seguridad.

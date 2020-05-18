@@ -18,19 +18,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Sistema de Monitoreo',
-      items: [
-        {
-          type: 'category',
-          label: 'Cacti',
-          items: ['cacti', 'instalacionC', 'configuracionC', 'administracionC'],
-          },
-          {
-            type: 'category',
-            label: 'Zabbix',
-            items: ['zabbix', 'instalacionH', 'configuracionH', 'administracionH'],
-            },
-          ],
+      label: 'Herramienta',
+      items: ['zabbix', 'instalacionH', 'configuracionH', {
+        type: 'category',
+        label: 'Administración',
+        items: ['administracionH', 'agenteZ', 'gruposZ', 'usuariosZ', 'plantillasZ', 'equiposZ'],
+      },
+    ],
     },
     {
       type: 'category',
@@ -40,28 +34,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Copia de Seguridad',
-      items: ['copia',
-      {
-        type: 'category',
-        label: 'TFTP',
-        items: ['instalacionTFTP', 'configuracionTFTP'],
-        },
-        'respaldo'],
+      items: ['copia', 'respaldo'],
     },
   ],
-  //someSidebar: {
-    //NM: ['introduccion'],
-    //Servidor: ['servidor', 'instalacionS'],
-    //Herramienta: ['acerca', 'doc2'],
-    //SNMP: ['doc3'],
-    //Backup: ['backup', 'mdx'],
-    //Introducción2: [
-      //'introduccion',
-      //{
-        //type: 'category',
-        //label: 'Docs',
-        //items: ['doc1'],
-        //},
-    //],
-  //},
 };

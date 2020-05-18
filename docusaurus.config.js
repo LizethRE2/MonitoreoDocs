@@ -1,11 +1,11 @@
 module.exports = {
   title: 'SISTEMA DE MONITOREO DE RED', // Title for your website.
-  tagline: 'UFPS Cúcuta & Campo Elíseos',
+  tagline: 'UFPS Cúcuta & Campos Elíseos',
   favicon: 'img/NMS.ico',
   url: 'https://localhost', // Your website URL
   //url: 'https://LizethRE2.github.io',
   baseUrl: '/', // Base URL for your project */
-  //baseUrl: '/documentacion/',
+  //baseUrl: '/MonitoreoDocs/',
   organizationName: 'LizethRE2', // Usually your GitHub org/user name.
   projectName: 'MonitoreoDocs', // Usually your repo name.
   themeConfig: {
@@ -25,7 +25,7 @@ module.exports = {
           position: 'right'
         },
         {
-          href: 'https://github.com/LizethRE2/MonitoreoDocs',
+          to: 'zabbix',
           label: 'Iniciar Sesión',
           position: 'right'
         },
@@ -73,8 +73,8 @@ module.exports = {
               href: 'https://ww2.ufps.edu.co',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/LizethRE2/MonitoreoDocs',
+              label: 'Zabbix',
+              href: 'https://www.zabbix.com',
             },
             {
               label: 'Docusaurus',
@@ -88,7 +88,7 @@ module.exports = {
             {
               html: `
               <address style="font-style: normal;">
-                      Avenida Gran Colombia No. 12E-96 Barrio Colsag, Edificio Aula Sur, Oficina 405 - C.S.I<br>
+                      Avenida Gran Colombia No. 12E-96 Barrio Colsag, Edificio Aula Sur, Oficina 405 - CSI<br>
                       San José de Cúcuta - Colombia<br>
                       Teléfono: (057)(7) 5776655 Ext: 277<br>
                       Correo electrónico: <a href="mailto:csi@ufps.edu.co" class="">csi@ufps.edu.co</a>
@@ -98,7 +98,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} C.S.I. Todos los derechos reservados.`,
+      copyright: `© ${new Date().getFullYear()} CSI. Todos los derechos reservados.`,
     },
   },
   presets: [

@@ -11,10 +11,12 @@ keywords:
   - UFPS
   - Centro de Servicios de Información
   - CSI
-image: https://i.imgur.com/mErPwqL.png
 ---
 <center><img src="../img/NMS.ico" width="30%"/></center>
 
-<div class="text-justify"><p> Estas páginas contienen la documentación del Sistema de Monitoreo de Red (Network Monitoring System | NMS). Esta documentación está destinada a ser utilizada por el Centro de Servicios de Información (CSI) de la Universidad Francisco de Paula Santander (UFPS).</p></div>
+Bienvenido al sitio de documentación del Sistema de Monitoreo de Red o NMS (Network Management System). Aquí encontrará guías de instalación, configuración y administración del sistema de monitoreo.
 
+La documentación está diseñada para ayudar al Centro de Servicios de Información (CSI) a implantar el sistema de monitoreo de red y administrar de forma eficaz su entorno de monitoreo.
+
+Use la barra lateral para acceder a la documentación.
 Use la barra lateral para navegar por el contenido de la documentación.

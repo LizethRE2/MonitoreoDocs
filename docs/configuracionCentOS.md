@@ -1,6 +1,6 @@
 ---
 id: configuracionS
-title: Configuración del Servidor
+title: Configuración de CentOS 7
 sidebar_label: Configuración
 hide_title: false
 hide_table_of_contents: false
@@ -14,105 +14,79 @@ keywords:
   - Servidor
   - CentOS 7
 ---
-## Configuración de la Red
-En un servidor por lo general es necesario asignar una dirección IP estática.
-
-Como primer paso es necesario conocer los adaptadores de red disponibles. Para ello, en la terminal se ingresa el siguiente comando:
-
-```console
-ifconfig
-```
-
-En este caso se puede observar el adaptador **_enp0s3_**, el cual no se encuentra configurado.
-![alt text](../img/centos15.png 'Interfaces disponibles')
-
+## Configuración de Red
 ## Modo Gui
-Para modificar el adaptador de red se debe ingresar como usuario privilegiado **_root_** y utilizar la herramienta nmtui (Network Manager Terminal User Interface).
+> :pushpin: **nmtui** es una herramienta que interactúa con NetworkManager para configurar las interfaces de red en sistemas operativos Linux Red Hat y derivados.
 
-> **nmtui** es una herramienta que interactúa con NetworkManager para configurar las interfaces de red en sistemas operativos Linux Red Hat y derivados.
-
-Ingrese el siguiente comando para abrir la herramienta nmtui:
+Ingrese el siguiente comando y presione la tecla **Enter** para abrir la herramienta nmtui.
 
 ```console
 nmtui
 ```
 
-Elija **_modificar una conexión_** y presione la tecla **_Enter_** para continuar.
-![alt text](../img/centos16.png 'Interface nmtui')
+Seleccione **[Modificar una conexión]** y presione la tecla **Enter** para continuar.
+![alt text](../img/centos7.png)
 
-> Para seleccionar los valores se pueden usar las flechas (arriba y abajo), la tecla Tabulador (Tab), la barra espaciadora (para seleccionar algunos elementos) o la tecla Enter (para seleccionar o aceptar una acción).
+Seleccione la interface a modificar, **[Editar...]** y presione la tecla **Enter** para continuar.
+![alt text](../img/centos7.1.png)
 
-Elija el adaptador a modificar, **_Editar..._**  y presione la tecla **_Enter_** para continuar.
-![alt text](../img/centos17.png 'Interface nmtui')
+Cambie de **[Automática]** a **[Manual]** y seleccione **[Mostrar]**.
+![alt text](../img/centos7.2.png)
 
-Dentro del panel de **_Edit Connection_** se puede observar que la dirección IP está en Automática o DHCP.
-![alt text](../img/centos18.png 'Interface nmtui')
+Ingrese los datos para configurar la interfaces. Seleccione **[Aceptar]** y presionar la tecla **Enter** para guardar.
+![alt text](../img/centos7.3.png)
 
-Para modificar la IP se cambia de Automática a **_Manual_** y se selecciona **_Mostrar_**. Una vez se despliega el menú se ingresan los parámetros requeridos.
+Seleccione **[Atrás]** y presionar la tecla **Enter** para continuar.
+![alt text](../img/centos7.4.png)
 
-Elija **_Aceptar_** y presionar la tecla **_Enter_** para continuar.
-![alt text](../img/centos19.png 'Interface nmtui')
+Seleccione **[Salir]** o **[Aceptar]** y presionar la tecla **Enter** para terminar la configuración.
+![alt text](../img/centos7.5.png)
 
-Elija **_Back_** y presionar la tecla **_Enter_** para continuar.
-![alt text](../img/centos20.png 'Interface nmtui')
-
-Elija **_Salir_** o **_Aceptar_** y presionar la tecla **_Enter_** para continuar.
-![alt text](../img/centos21.png 'Interface nmtui')
-
-Para aplicar y verificar los cambios ingrese los siguientes comandos:
+Para aplicar cambios, reinicie el servicio network. Ingrese el siguiente comando y presione la tecla **Enter**.
 
 ```console
 systemctl restart network.service
-ifconfig
 ```
-![alt text](../img/centos22.png 'Aplicar cambios')
+![alt text](../img/centos8.png)
 
 ## Modo Consola
-Para modificar el adaptador de red se debe ingresar como usuario privilegiado **_root_** y abrir el archivo de configuración del adaptador usando un editor de texto.
-
-Ingrese el siguiente comando para ubicar el adaptador de red a modificar:
+Ingrese el siguiente comando y presione la tecla **Enter** para ubicar la interface a modificar.
 
 ```console
-cd etc/sysconfig/network-scripts/
+cd /etc/sysconfig/network-scripts/
 ```
+![alt text](../img/centos9.png)
 
-![alt text](../img/centos23.png 'Archivo de configuración')
-
-En este caso se elige el adaptador **_ifcfg-enp0s3_**.
-
+Ingrese el siguiente comando y presione la tecla **Enter** para abrir el archivo de configuración.
 ```console
 nano ifcfg-enp0s3
 ```
 
-![alt text](../img/centos24.png 'Archivo de configuración')
+![alt text](../img/centos9.1.png)
 
-Al abrir el archivo de configuración se puede visualizar lo siguiente:
-![alt text](../img/centos25.png 'Archivo de configuración')
-
-Para modificar la IP, se cambian las siguientes líneas:
-
+Línea 4: cambie de **none** a **static**.
 ```console
-BOOTPROTO=static
-ONBOOT=yes
+BOOTPROTO="static"
 ```
 
-Además se añaden las siguientes líneas al final:
-
+Línea 15: cambie de **no** a **yes**.
 ```console
-IPADDR=192.168.0.200
+ONBOOT="yes"
+```
+Línea 16: añada los datos de la red.
+```console
+IPADDR="xxx.xxx.xxx.xxx"
 PREFIX=24
-GATEWAY=192.168.0.1
-DNS1=8.8.8.8
+GATEWAY="xxx.xxx.xxx.xxx"
+DNS1="xxx.xxx.xxx.xxx"
 ```
-> Cambiar los campos por la información de la red
 
-![alt text](../img/centos26.png 'Archivo de configuración')
-Una vez se configuran los valores, se guarda y se cierra el archivo (**_Ctrl + o, Ctrl + x_** para el editor nano).
+![alt text](../img/centos9.2.png)
+Guarde y se cierre el archivo (**Ctrl + o, Ctrl + x** para el editor nano).
 
-Para aplicar y verificar los cambios ingrese los siguientes comandos:
+Para aplicar cambios, reinicie el servicio network. Ingrese el siguiente comando y presione la tecla **Enter**.
 
 ```console
 systemctl restart network.service
-ifconfig
 ```
-![alt text](../img/centos22.png 'Aplicar cambios')
+![alt text](../img/centos8.png)

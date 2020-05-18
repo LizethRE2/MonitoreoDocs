@@ -1,6 +1,6 @@
 ---
 id: activacionSNMP
-title: Activación SNMP
+title: Activación del protocolo SNMP
 sidebar_label: Activación
 hide_title: false
 hide_table_of_contents: false
@@ -14,52 +14,44 @@ keywords:
   - SNMP
   - SNMPv3
 ---
-## Ingreso a la Consola
-Hay dos formas para ingresar al Switch:
-- Via Telnet (Telecommunication Network)
-- Mediante el puerto de consola del dispositivo.
-
-Para este caso se utilizará un cliente Telnet (Putty).
-![alt text](../img/putty.png 'Putty')
-
-Al conectarse al Switch se pedirá la contraseña del dispositivo. Ingresar la contraseña y presionar la tecla **_Enter_** para continuar.
-![alt text](../img/consola1.png 'Ingreso a la Consola')
+Conéctese al dispositivo. Ingrese la contraseña y presione la tecla **Enter** para continuar.
+![alt text](../img/consola1.png)
 
 ## Modo Privilegio
-Para realizar cambios en el dispositivo se debe estar en modo privilegiado. Ingresar el siguiente comando y la contraseña del dispositivo.
+Ingrese el siguiente comando y presione la tecla **Enter**. Después, ingrese la contraseña del dispositivo y presione la tecla **Enter** para acceder al modo privilegiado:
 
 ```console
 enable
 ```
 
-![alt text](../img/consola2.png 'Modo Privilegiado')
+![alt text](../img/consola2.png)
 
-> El símbolo **_#_** indica que se encuentra en Modo Privilegiado.
+> :pushpin: El símbolo **#** indica que se encuentra en Modo Privilegiado.
 
 ## Información SNMP
-Se puede ver la configuración en ejecución y la información SNMP ingresando el siguiente comando:
+Verifique la información de SNMP en el dispositivo. Ingrese el siguiente comando y presione la tecla **Enter**:
 
 ```console
 show running-config
 ```
 
-![alt text](../img/snmp1.png 'Información Switch')
+![alt text](../img/snmp1.png)
 
-> Si no hay información SNMP presente, continúe con estos pasos. Si hay algunos comandos SNMP registrados, se pueden modificar o deshabilitar.
+> :pushpin: Si no hay información SNMP presente, continúe con estos pasos. Si hay algún comando SNMP registrado, se puede modificar o deshabilitar colocando **no** antes del comando.
 
 ## Modo Configuración
-Para configurar el dispositivo se debe estar en modo configuración. Ingresar el siguiente comando:
+Ingrese el siguiente comando y presione la tecla **Enter** para acceder al modo configuración:
 
 ```console
 configure terminal
 ```
 
-![alt text](../img/snmp2.png 'Modo Configuración')
+![alt text](../img/snmp2.png)
 
-> **_(config)#_** indica que se encuentra en modo configuración. Los comandos se ingresan uno por línea.
+> :pushpin: **(config)#** indica que se encuentra en modo configuración. Los comandos se pueden ingresar uno por línea o varias líneas al tiempo.
 
 ## Configuración SNMPv3
-Se requiere configurar lo siguiente:
+Se requiere configurar las siguientes variables:
 
 1. **Grupo.** Especifica el nivel de seguridad que se va a utilizar.
 
@@ -72,20 +64,20 @@ Se requiere configurar lo siguiente:
 
 2. **Usuario.** Pertenece al grupo anterior.
 
-3. Apuntar el servidor NMS para las notificaciones.
+3. Apuntar el servidor al dispositivo, para habilitar las notificaciones.
 
-### Crear grupo
+### Creación de Grupo
 ```console
 snmp-server group [nombre_grupo] [versión {v1 | v2c | v3 }] [nivel {auth | noauth | priv}]
 
 ```
 
-### Crear usuario
+### Creación de Usuario
 ```console
 snmp-server user [nombre_usuario] [nombre_grupo] [versión {v1 | v2c | v3 }]  [autenticación {auth md5 | auth sha} [contraseña]] [privacidad {priv des | priv aes 128} [contraseña]]
 ```
 
-### Configuración notificaciones del servidor destino
+### Notificaciones al Servidor
 ```console
 snmp-server host [IP_servidor] traps version 3 [nivel {auth | noauth | priv}] [nombre_usuario]
 ```
@@ -94,33 +86,38 @@ snmp-server host [IP_servidor] traps version 3 [nivel {auth | noauth | priv}] [n
 snmp-server enable traps
 ```
 
-Salir del modo de configuración y regrese al menú principal ingresando **_exit_** en la consola.
+Ingrese **exit** y presione la tecla **Enter** para salir del modo de configuración.
+![alt text](../img/snmp3.png)
 
-![alt text](../img/snmp3.png 'Conffiguración SNMP')
+### Creación de Comunidad (opcional)
+Una comunidad de SNMP define un grupo de dispositivos y sistemas de administración. Solo los dispositivos y sistemas de administración que son miembros de la misma comunidad pueden intercambiar mensajes de SNMP. Un dispositivo o sistema de administración puede ser miembro de varias comunidades.
 
-### Guardar configuración
-Se debe escribir la configuración modificada en la RAM no volátil (NVRAM) para guardar la configuración. Ingrese el siguiente comando:
+#### Cadena de comunidad de lectura RO
+```console
+snmp-server community nombre_comunidad RO
+```
+
+#### Cadena de comunidad de escritura RW
+```console
+snmp-server community nombre_comunidad RW
+```
+
+Ingrese el siguiente comando y presione la tecla **Enter** para guardar la configuración:
 
 ```console
 write memory
 ```
 
-![alt text](../img/snmp4.png 'Guardar configuración')
+![alt text](../img/snmp4.png)
 
 
-## Verificación SNMPv3
-Para verificar la activación del protocolo SNMPv3 se utiliza el comando **_show snmp_**.
-
-```console
-show snmp group
-```
-
-![alt text](../img/snmp5.png 'Verificación SNMPv3')
+## Verificación
+Verifique la activación del protocolo SNMPv3. Ingrese el siguiente comando y presione la tecla **Enter**:
 
 ```console
-show snmp user
+show snmp
 ```
 
-![alt text](../img/snmp6.png 'Verificación SNMPv3')
+![alt text](../img/snmp5.png)
 
-> Para ingresar estos comandos se debe estar en modo privilegio **_enable_**
+> :pushpin: Para ingresar estos comandos se debe estar en modo privilegio **enable**.
