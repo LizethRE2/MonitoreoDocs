@@ -64,15 +64,13 @@ El menú Reports contiene secciones que permiten visualizar una variedad de info
 
 - **System information**. La sección System information muestra un resumen de los datos clave del sistema.
 
-- **Availability report**. La sección Availability report muestra el porcentaje de tiempo que las alertas han
-permanecido en un determinado estado, informando así sobre la disponibilidad de cada
-equipo.
+- **Availability report**. La sección Availability report muestra el porcentaje de tiempo que las alertas han permanecido en un determinado estado, informando así sobre la disponibilidad de cada equipo.
 
 - **Triggers top 100**. La sección Triggers top 100 muestra las alertas que han cambiado su estado con mayor frecuencia dentro del período de evaluación.
 
 - **Audit**. La sección Audit muestra los registros de los cambios realizados en la interfaz.
 
-- **Action log**. La sección Action log muestra los detalles de las operaciones (notificaciones, comandos remotos) ejecutados dentro de una acción.
+- **Action log**. La sección Action log muestra los detalles de las operaciones (notificaciones y comandos remotos) ejecutados dentro de una acción.
 
 - **Notifications**. La sección Notifications muestra un informe sobre el número de notificaciones enviadas a cada usuario.
 

@@ -22,7 +22,7 @@ module.exports = {
       items: ['zabbix', 'instalacionH', 'configuracionH', {
         type: 'category',
         label: 'Administración',
-        items: ['administracionH', 'agenteZ', 'gruposZ', 'usuariosZ', 'plantillasZ', 'equiposZ'],
+        items: ['administracionH', 'agenteZ', 'gruposZ', 'usuariosZ', 'plantillasZ', 'equiposZ', 'reportesZ'],
       },
     ],
     },
